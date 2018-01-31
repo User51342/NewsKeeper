@@ -15,7 +15,7 @@ namespace NewsFeed.SQLDataAccess.Migrations
                         FeedName = c.String(),
                         Description = c.String(),
                         FeedUrl = c.String(),
-                        IsActive = c.Boolean(nullable: false),
+                        IsActive = c.Boolean(nullable: false, defaultValue: true),
                     })
                 .PrimaryKey(t => t.Id);
             
