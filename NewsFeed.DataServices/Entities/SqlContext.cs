@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
 namespace NewsFeed.SQLDataAccess.Entities
@@ -19,11 +18,5 @@ namespace NewsFeed.SQLDataAccess.Entities
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
         public virtual DbSet<NewsFeedAbo> NewsFeedAbos { get; set; }
         public virtual DbSet<NewsFeedItem> NewsFeedItems { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<NewsFeedAbo>().Property(c => c.CreationDate).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
-            //base.OnModelCreating(modelBuilder);
-        }
     }
 }

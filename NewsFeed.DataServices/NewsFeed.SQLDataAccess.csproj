@@ -57,6 +57,15 @@
     <Compile Include="Entities\NewsFeedItem.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Migrations\201801311033495_InitialCreate.cs" />
+    <Compile Include="Migrations\201801311033495_InitialCreate.Designer.cs">
+      <DependentUpon>201801311033495_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801311103570_AddCreationDateInBaseEntity.cs" />
+    <Compile Include="Migrations\201801311103570_AddCreationDateInBaseEntity.Designer.cs">
+      <DependentUpon>201801311103570_AddCreationDateInBaseEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRepository.cs" />
     <Compile Include="SqlUnitOfWork.cs" />
@@ -64,6 +73,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801311033495_InitialCreate.resx">
+      <DependentUpon>201801311033495_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801311103570_AddCreationDateInBaseEntity.resx">
+      <DependentUpon>201801311103570_AddCreationDateInBaseEntity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
