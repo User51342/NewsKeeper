@@ -1,4 +1,6 @@
-﻿namespace NewsKeeper.Interfaces.Entities
+﻿using System;
+
+namespace NewsKeeper.Interfaces.Entities
 {
  public   class NewsFeedItemDto : INewsFeedItemDto
     {
@@ -6,5 +8,6 @@
         public string Title { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
+        public DateTime CreationDate { get; set; } 
     }
 }

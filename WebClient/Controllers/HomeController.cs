@@ -7,15 +7,17 @@ namespace NewsKeeper.WebClient.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
             ViewBag.Message = "Your application description page.";
             NewsFeedService newsFeedService = new NewsFeedService();
             var newsFeedAboDto = newsFeedService.GetNewsFeeds();
             return View(newsFeedAboDto);
+        }
+
+        public ActionResult NewsFeed(int id)
+        {
+            NewsFeedService newsFeedService = new NewsFeedService();
+            var items = newsFeedService.GetNewsFeedItems(id);
+            return View(items);
         }
 
         public ActionResult Contact()

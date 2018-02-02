@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using NewsKeeper.Interfaces;
@@ -24,6 +25,7 @@ namespace NewsKeeper.LogicLayer
                 c.CreateMap<NewsFeedAbo, NewsFeedAboDto>();
                 c.CreateMap<NewsFeedAboDto, NewsFeedAbo>();
                 c.CreateMap<NewsFeedItemDto, NewsFeedItem>();
+                c.CreateMap<NewsFeedItem, NewsFeedItemDto>();
             });
             _mapper = config.CreateMapper();
         }
@@ -55,6 +57,14 @@ namespace NewsKeeper.LogicLayer
                 }
             }
             _UnitOfWork.commit();
+        }
+
+        public IEnumerable<NewsFeedItemDto> GetNewsFeedItems(int id)
+        {
+            var context = new SqlUnitOfWork();
+            var items = context.NewsFeedItems.GetAll();
+            var dtos = _mapper.Map<IEnumerable<NewsFeedItemDto>>(items);
+            return dtos;
         }
         #endregion
     }

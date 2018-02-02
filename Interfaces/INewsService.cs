@@ -6,6 +6,8 @@ namespace NewsKeeper.Interfaces
     public interface INewsService
     {
         IEnumerable<NewsFeedAboDto> GetNewsFeeds();
+        IEnumerable<NewsFeedItemDto> GetNewsFeedItems(int id);
         void StoreFeedItems(IEnumerable<INewsFeedItemDto> newsFeedItems);
+
     }
 }

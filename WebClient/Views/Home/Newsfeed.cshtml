@@ -1,0 +1,7 @@
+﻿@model IEnumerable<NewsKeeper.Interfaces.INewsFeedItemDto>
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@foreach (var item in Model)
+{
+<p><a href="@item.Url" target="_blank">@item.Title</a><br />[@item.CreationDate]<br />@item.Description </p>
+}
