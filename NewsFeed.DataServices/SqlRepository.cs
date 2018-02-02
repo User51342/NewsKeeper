@@ -1,21 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using NewsFeed.SQLDataAccess.Entities;
-using NewsFeed.SQLDataAccess.Interfaces;
+using NewsKeeper.Logging;
+using NewsKeeper.SQLDataAccess.Entities;
+using NewsKeeper.SQLDataAccess.Interfaces;
 
-namespace NewsFeed.SQLDataAccess
+namespace NewsKeeper.SQLDataAccess
 {
-    public class SQLRepository<T> : IRepository<T> where T : class
+    public sealed class SQLRepository<T> : LogBase, IRepository<T> where T : BaseEntity
     {
         #region Fields
+
+        private readonly SqlContext _context;
         private readonly DbSet _objectSet;
         #endregion
 
         #region Construction / Initialization / Deconstruction
         public SQLRepository(SqlContext context)
         {
+            _context = context;
             _objectSet = context.Set<T>();
+            Debug(@"Constructor SQLRepository(SqlContext context).");
         }
         #endregion
 
@@ -23,6 +28,15 @@ namespace NewsFeed.SQLDataAccess
         public void Add(T entity)
         {
             _objectSet.Add(entity);
+        }
+
+        public void Update(T entity)
+        {
+            var updateEntity = (T)_objectSet.Find(entity.Id);
+            if (updateEntity != null)
+            {
+                _context.Entry(updateEntity).CurrentValues.SetValues(entity);
+            }
         }
 
         public T Find(int id)

@@ -7,8 +7,8 @@
     <ProjectGuid>{89410C25-71D7-4436-9071-AE4858DE7ACE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NewsFeed.SQLDataAccess</RootNamespace>
-    <AssemblyName>NewsFeed.SQLDataAccess</AssemblyName>
+    <RootNamespace>NewsKeeper.SQLDataAccess</RootNamespace>
+    <AssemblyName>NewsKeeper.SQLDataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,14 +57,6 @@
     <Compile Include="Entities\NewsFeedItem.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201801311033495_InitialCreate.cs" />
-    <Compile Include="Migrations\201801311033495_InitialCreate.Designer.cs">
-      <DependentUpon>201801311033495_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801311103570_AddCreationDateInBaseEntity.cs" />
-    <Compile Include="Migrations\201801311103570_AddCreationDateInBaseEntity.Designer.cs">
-      <DependentUpon>201801311103570_AddCreationDateInBaseEntity.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRepository.cs" />
@@ -75,12 +67,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801311033495_InitialCreate.resx">
-      <DependentUpon>201801311033495_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801311103570_AddCreationDateInBaseEntity.resx">
-      <DependentUpon>201801311103570_AddCreationDateInBaseEntity.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{9BC8298E-8BC0-4813-BEE1-DA3B24EDC79D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

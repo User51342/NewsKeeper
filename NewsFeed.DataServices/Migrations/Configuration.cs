@@ -1,24 +1,23 @@
-namespace NewsFeed.SQLDataAccess.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
+using NewsKeeper.SQLDataAccess.Entities;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NewsFeed.SQLDataAccess.Entities.SqlContext>
+namespace NewsKeeper.SQLDataAccess.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<SqlContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "NewsFeed.SQLDataAccess.Entities.SqlContext";
         }
 
-        protected override void Seed(NewsFeed.SQLDataAccess.Entities.SqlContext context)
+        protected override void Seed(SqlContext context)
         {
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
         }
     }
 }

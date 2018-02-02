@@ -7,8 +7,8 @@
     <ProjectGuid>{20FAB1C0-E410-4270-A66C-01C13DE48B6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NewsFeed.Tests</RootNamespace>
-    <AssemblyName>NewsFeed.Tests</AssemblyName>
+    <RootNamespace>NewsKeeper.Tests</RootNamespace>
+    <AssemblyName>NewsKeeper.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ParserTests.cs" />
-    <Compile Include="SQLTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +69,13 @@
       <Project>{FB41A374-FF49-4DF5-AC07-07FD34FF1797}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NewsFeed.DataServices\NewsFeed.SQLDataAccess.csproj">
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{9bc8298e-8bc0-4813-bee1-da3b24edc79d}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewsFeed.DataServices\SQLDataAccess.csproj">
       <Project>{89410c25-71d7-4436-9071-ae4858de7ace}</Project>
-      <Name>NewsFeed.SQLDataAccess</Name>
+      <Name>SQLDataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewsKeeper.Grabber\Grabber.csproj">
       <Project>{76541db0-1e9f-40d6-99e0-540c84ee4e2b}</Project>

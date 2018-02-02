@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewsFeed.SQLDataAccess.Entities
+namespace NewsKeeper.SQLDataAccess.Entities
 {
     [Table("NewsFeedItem")]
     public class NewsFeedItem : BaseEntity

@@ -5,7 +5,7 @@ using NewsKeeper.Grabber;
 using NewsKeeper.Grabber.Parser;
 using NewsKeeper.Interfaces.Entities;
 
-namespace NewsFeed.Tests
+namespace NewsKeeper.Tests
 {
     [TestClass]
     public class ParserTests

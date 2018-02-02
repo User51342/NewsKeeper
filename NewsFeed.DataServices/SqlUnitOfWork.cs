@@ -1,11 +1,10 @@
-﻿using System.Configuration;
-using NewsFeed.SQLDataAccess.Entities;
-using NewsFeed.SQLDataAccess.Interfaces;
+﻿using NewsKeeper.SQLDataAccess.Interfaces;
+using NewsKeeper.Logging;
+using NewsKeeper.SQLDataAccess.Entities;
 
-
-namespace NewsFeed.SQLDataAccess
+namespace NewsKeeper.SQLDataAccess
 {
-    public class SqlUnitOfWork : IUnitOfWork
+    public sealed class SqlUnitOfWork : LogBase, IUnitOfWork
     {
         #region Fields
         private SQLRepository<NewsFeedAbo> _newsFeedAbos;
@@ -14,10 +13,10 @@ namespace NewsFeed.SQLDataAccess
         #endregion
 
         #region Construction / Initialization / Deconstruction
-        public SqlUnitOfWork()
+        public SqlUnitOfWork() 
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["NewsFeeds"].ConnectionString;
             _context = new SqlContext();
+            Debug("Constructor SqlUnitOfWork().");
         }
         #endregion
 

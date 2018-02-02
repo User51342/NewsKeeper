@@ -1,6 +1,6 @@
 using System.Data.Entity;
 
-namespace NewsFeed.SQLDataAccess.Entities
+namespace NewsKeeper.SQLDataAccess.Entities
 {
     public class SqlContext : DbContext
     {
@@ -19,4 +19,7 @@ namespace NewsFeed.SQLDataAccess.Entities
         public virtual DbSet<NewsFeedAbo> NewsFeedAbos { get; set; }
         public virtual DbSet<NewsFeedItem> NewsFeedItems { get; set; }
     }
+
+    
+    
 }

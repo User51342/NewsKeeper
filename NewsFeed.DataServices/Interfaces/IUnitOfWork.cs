@@ -1,4 +1,4 @@
-﻿namespace NewsFeed.SQLDataAccess.Interfaces
+﻿namespace NewsKeeper.SQLDataAccess.Interfaces
 {
     public interface IUnitOfWork
     {

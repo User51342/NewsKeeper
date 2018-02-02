@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using NewsFeed.SQLDataAccess;
-using NewsFeed.SQLDataAccess.Entities;
 using NewsKeeper.Interfaces;
 using NewsKeeper.Interfaces.Entities;
+using NewsKeeper.SQLDataAccess;
+using NewsKeeper.SQLDataAccess.Entities;
 
 namespace NewsKeeper.LogicLayer
 {
@@ -40,7 +40,7 @@ namespace NewsKeeper.LogicLayer
         public void UpdateAbo(NewsFeedAboDto abo)
         {
             var newsFeedAbo = _mapper.Map<NewsFeedAbo>(abo);
-            _UnitOfWork.NewsFeedAbos.Add(newsFeedAbo);
+            _UnitOfWork.NewsFeedAbos.Update(newsFeedAbo);
             _UnitOfWork.commit();
         }
 

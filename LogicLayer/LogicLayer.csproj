@@ -53,9 +53,13 @@
       <Project>{FB41A374-FF49-4DF5-AC07-07FD34FF1797}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NewsFeed.DataServices\NewsFeed.SQLDataAccess.csproj">
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{9bc8298e-8bc0-4813-bee1-da3b24edc79d}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewsFeed.DataServices\SQLDataAccess.csproj">
       <Project>{89410c25-71d7-4436-9071-ae4858de7ace}</Project>
-      <Name>NewsFeed.SQLDataAccess</Name>
+      <Name>SQLDataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

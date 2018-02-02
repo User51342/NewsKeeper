@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewsFeed.SQLDataAccess.Entities
+namespace NewsKeeper.SQLDataAccess.Entities
 {
     [Table("NewsFeedAbos")]
     public class NewsFeedAbo : BaseEntity

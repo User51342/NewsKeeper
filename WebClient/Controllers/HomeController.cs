@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using NewsKeeper.LogicLayer;
 
-namespace WebClient.Controllers
+namespace NewsKeeper.WebClient.Controllers
 {
     public class HomeController : Controller
     {
