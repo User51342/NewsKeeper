@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using NewsKeeper.Logging;
 using NewsKeeper.SQLDataAccess.Entities;
 using NewsKeeper.SQLDataAccess.Interfaces;
 
 namespace NewsKeeper.SQLDataAccess
 {
-    public sealed class SQLRepository<T> : LogBase, IRepository<T> where T : BaseEntity
+    public sealed class SQLRepository<T> : IRepository<T> where T : BaseEntity
     {
         #region Fields
 
@@ -20,7 +19,6 @@ namespace NewsKeeper.SQLDataAccess
         {
             _context = context;
             _objectSet = context.Set<T>();
-            Debug(@"Constructor SQLRepository(SqlContext context).");
         }
         #endregion
 
