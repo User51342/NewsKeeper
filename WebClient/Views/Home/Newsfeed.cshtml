@@ -3,5 +3,20 @@
 <h3>@ViewBag.Message</h3>
 @foreach (var item in Model)
 {
-<p><a href="@item.Url" target="_blank">@item.Title</a><br />[@item.CreationDate]<br />@item.Description </p>
+    <p>
+        <div>
+            <div class="glyphicon glyphicon-chevron-up"></div> <a href="@item.Url" target="_blank">@item.Title</a><span> [@item.CreationDate]</span>
+            <div class="b">@item.Description</div>
+        </div>
+    </p>
 }
+<script type="text/javascript">
+    $(function () {
+        $(".b").hide();
+        $(".glyphicon-chevron-up").click(function () {
+            $(this).siblings(".b").toggle();
+            $(this).toggleClass("glyphicon-chevron-down");
+        }
+        );
+    });
+</script>

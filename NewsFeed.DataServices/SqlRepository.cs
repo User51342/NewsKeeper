@@ -46,7 +46,7 @@ namespace NewsKeeper.SQLDataAccess
 
         public IEnumerable<T> GetAll()
         {
-            return _objectSet.Cast<T>().ToList();
+            return _objectSet.Cast<T>().OrderByDescending(c => c.CreationDate).ToList();
         }
 
         public void Remove(T entity)

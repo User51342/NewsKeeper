@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -35,7 +36,8 @@ namespace NewsKeeper.Grabber.Parser
                             NewsFeedAbo = feed,
                             Description = feeditem.description,
                             Title = feeditem.title,
-                            Url = feeditem.link
+                            Url = feeditem.link,
+                            CreationDate = DateTime.Now
                         };
                         result.Add(newItem);
                     }

@@ -1,10 +1,9 @@
 ﻿using NewsKeeper.SQLDataAccess.Interfaces;
-using NewsKeeper.Logging;
 using NewsKeeper.SQLDataAccess.Entities;
 
 namespace NewsKeeper.SQLDataAccess
 {
-    public sealed class SqlUnitOfWork : LogBase, IUnitOfWork
+    public sealed class SqlUnitOfWork : IUnitOfWork
     {
         #region Fields
         private SQLRepository<NewsFeedAbo> _newsFeedAbos;
@@ -16,7 +15,6 @@ namespace NewsKeeper.SQLDataAccess
         public SqlUnitOfWork() 
         {
             _context = new SqlContext();
-            Debug("Constructor SqlUnitOfWork().");
         }
         #endregion
 
@@ -50,7 +48,7 @@ namespace NewsKeeper.SQLDataAccess
         #endregion
         
         #region Public implementation
-        public void commit()
+        public void Commit()
         {
             _context.SaveChanges();
         }

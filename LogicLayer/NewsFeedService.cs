@@ -43,7 +43,7 @@ namespace NewsKeeper.LogicLayer
         {
             var newsFeedAbo = _mapper.Map<NewsFeedAbo>(abo);
             _UnitOfWork.NewsFeedAbos.Update(newsFeedAbo);
-            _UnitOfWork.commit();
+            _UnitOfWork.Commit();
         }
 
         public void StoreFeedItems(IEnumerable<INewsFeedItemDto> newsFeedItems)
@@ -56,7 +56,7 @@ namespace NewsKeeper.LogicLayer
                     _UnitOfWork.NewsFeedItems.Add(newItem);
                 }
             }
-            _UnitOfWork.commit();
+            _UnitOfWork.Commit();
         }
 
         public IEnumerable<NewsFeedItemDto> GetNewsFeedItems(int id)
